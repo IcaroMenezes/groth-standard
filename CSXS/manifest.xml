@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   ExtensionBundleId="com.meuplugin.animation"
+                   ExtensionBundleVersion="1.0.0"
+                   ExtensionBundleName="Animation Plugin"
+                   Version="7.0">
+
+   <ExtensionList>
+      <Extension Id="com.meuplugin.animation.panel" Version="1.0"/>
+   </ExtensionList>
+
+   <ExecutionEnvironment>
+      <HostList>
+         <Host Name="AEFT" Version="13.0"/>  <!-- AEFT: After Effects -->
+      </HostList>
+      <LocaleList>
+         <Locale Code="All"/>
+      </LocaleList>
+      <RequiredRuntimeList>
+         <RequiredRuntime Name="CSXS" Version="7.0"/>
+      </RequiredRuntimeList>
+   </ExecutionEnvironment>
+
+   <DispatchInfoList>
+      <Extension Id="com.meuplugin.animation.panel">
+         <DispatchInfo>
+            <Resources>
+               <MainPath>./html/index.html</MainPath>
+               <CEFCommandLine/>
+            </Resources>
+            <Lifecycle>
+               <AutoVisible>true</AutoVisible>
+            </Lifecycle>
+            <UI>
+               <Type>Panel</Type>
+               <Menu>Animation Plugin</Menu>
+               <Geometry>
+                  <Size>
+                     <Width>300</Width>
+                     <Height>200</Height>
+                  </Size>
+               </Geometry>
+            </UI>
+         </DispatchInfo>
+      </Extension>
+   </DispatchInfoList>
+</ExtensionManifest>
