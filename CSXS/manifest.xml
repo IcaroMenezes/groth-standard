@@ -1,47 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   ExtensionBundleId="com.meuplugin.animation"
-                   ExtensionBundleVersion="1.0.0"
-                   ExtensionBundleName="Animation Plugin"
-                   Version="7.0">
+<ExtensionManifest Version="8.0" ExtensionBundleId="com.groth.motionstandard"
+                   ExtensionBundleVersion="1.0" ExtensionBundleName="Animation Plugin">
+  <ExtensionList>
+    <!-- Defina o ID do plugin e a versão -->
+    <Extension Id="com.groth.motionstandard.panel" Version="1.0"/>
+  </ExtensionList>
+  
+  <ExecutionEnvironment>
+    <!-- Defina os aplicativos suportados e a versão -->
+    <HostList>
+      <!-- AEFT se refere ao After Effects -->
+      <Host Name="AEFT" Version="[18.0,99.0]"/> <!-- AE 2021+ -->
+    </HostList>
 
-   <ExtensionList>
-      <Extension Id="com.meuplugin.animation.panel" Version="1.0"/>
-   </ExtensionList>
+    <!-- Defina os idiomas suportados -->
+    <LocaleList>
+      <Locale Code="All"/> <!-- Suporte a todos os idiomas -->
+    </LocaleList>
 
-   <ExecutionEnvironment>
-      <HostList>
-         <Host Name="AEFT" Version="13.0"/>  <!-- AEFT: After Effects -->
-      </HostList>
-      <LocaleList>
-         <Locale Code="All"/>
-      </LocaleList>
-      <RequiredRuntimeList>
-         <RequiredRuntime Name="CSXS" Version="7.0"/>
-      </RequiredRuntimeList>
-   </ExecutionEnvironment>
+    <!-- Defina a versão mínima da runtime CSXS -->
+    <RequiredRuntimeList>
+      <RequiredRuntime Name="CSXS" Version="11.0"/> <!-- CSXS 11 para After Effects 2021+ -->
+    </RequiredRuntimeList>
+  </ExecutionEnvironment>
 
-   <DispatchInfoList>
-      <Extension Id="com.meuplugin.animation.panel">
-         <DispatchInfo>
-            <Resources>
-               <MainPath>./html/index.html</MainPath>
-               <CEFCommandLine/>
-            </Resources>
-            <Lifecycle>
-               <AutoVisible>true</AutoVisible>
-            </Lifecycle>
-            <UI>
-               <Type>Panel</Type>
-               <Menu>Animation Plugin</Menu>
-               <Geometry>
-                  <Size>
-                     <Width>300</Width>
-                     <Height>200</Height>
-                  </Size>
-               </Geometry>
-            </UI>
-         </DispatchInfo>
-      </Extension>
-   </DispatchInfoList>
+  <!-- Configurações do plugin -->
+  <DispatchInfoList>
+    <Extension Id="com.groth.motionstandard.panel">
+      <DispatchInfo>
+        <Resources>
+          <!-- Caminho do arquivo principal da interface -->
+          <MainPath>./html/index.html</MainPath> <!-- Arquivo HTML que será carregado -->
+
+          <!-- Caminho do script JavaScript da interface -->
+          <ScriptPath>./js/ui.js</ScriptPath> <!-- Script JS de interação com a interface -->
+          <CEFCommandLine/>
+        </Resources>
+
+        <!-- Configurações de ciclo de vida do plugin -->
+        <Lifecycle>
+          <AutoVisible>true</AutoVisible> <!-- Torna o painel visível automaticamente -->
+        </Lifecycle>
+
+        <!-- Configurações da interface do usuário -->
+        <UI>
+          <Type>Panel</Type> <!-- Define o tipo como painel (outra opção é "ModalDialog") -->
+          <Menu>Animation Plugin</Menu> <!-- Nome exibido no menu -->
+          <Geometry>
+            <Size>
+              <Width>300</Width>  <!-- Largura inicial da janela -->
+              <Height>200</Height> <!-- Altura inicial da janela -->
+            </Size>
+            <MinSize>
+              <Width>200</Width> <!-- Tamanho mínimo da janela -->
+              <Height>150</Height>
+            </MinSize>
+          </Geometry>
+        </UI>
+
+      </DispatchInfo>
+    </Extension>
+  </DispatchInfoList>
+  
+  <!-- Configurações adicionais de permissões de segurança -->
+  <SpecialPermissions>
+    <RequiredPermission>NativeProcess</RequiredPermission> <!-- Permissão para interagir com processos nativos -->
+    <RequiredPermission>InternetAccess</RequiredPermission> <!-- Permissão de acesso à internet, se necessário -->
+  </SpecialPermissions>
 </ExtensionManifest>
