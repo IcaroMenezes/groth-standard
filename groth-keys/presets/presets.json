@@ -1,0 +1,4 @@
+[
+    { "name": "Suave", "influenceIn": 80, "influenceOut": 80 },
+    { "name": "Agressivo", "influenceIn": 20, "influenceOut": 20 }
+]

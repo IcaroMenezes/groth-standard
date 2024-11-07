@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExtensionManifest xmlns="http://www.adobe.com/extension/manifest">
+    <ExtensionList>
+        <Extension Id="com.exemplo.plugin" Version="1.0.0" />
+    </ExtensionList>
+    <ExecutionEnvironment>
+        <HostList>
+            <Host Name="AEFT" Version="[15.0,99.9]" />
+        </HostList>
+    </ExecutionEnvironment>
+    <Resources>
+        <MainPath>../interface/index.html</MainPath>
+        <ScriptPath>../jsx/script.jsx</ScriptPath>
+        <CEFCommandLine/>
+    </Resources>
+    <UI>
+        <Type>Panel</Type>
+        <Width>300</Width>
+        <Height>400</Height>
+    </UI>
+</ExtensionManifest>
